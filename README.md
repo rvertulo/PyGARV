@@ -78,7 +78,7 @@ We need to implement the superclass method called "fitness". This method has as 
             x > 0 and
             y > 0
         ):
-            #the f value will be used as a rating for the chromosome. As bigger
+            #the f value will be used as a rating for the chromosome. As bigger the
             #value assumes better will be the rating of this specific chromosome.
             #IMPORTANT NOTE: the rating value can never be zero.
             rating = f
