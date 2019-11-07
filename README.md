@@ -1,7 +1,7 @@
 # PyGARV
 PyGARV is a Python module that provides all resources needed to develop Genetic Algorithms in an easy and fast way.
 
-Created by Rodrigo Cesar Vertulo on November, 7, 2019.
+Created by Rodrigo Cesar Vertulo on November 7, 2019.
 <br/>
 Copyright(c) 2019. Rodrigo Cesar Vertulo
 <br/>
