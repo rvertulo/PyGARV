@@ -115,5 +115,5 @@ Now our subclass is ready to be executed. To run the Genetic Algorithm we need i
 
 ```python
 pygarv = ExamplePyGARV()
-pygarv.runGA(1) #runs the Genetic Algorithm for 1000 generations
+pygarv.runGA(1000) #runs the Genetic Algorithm for 1000 generations
 ```
