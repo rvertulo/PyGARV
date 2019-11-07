@@ -8,7 +8,7 @@ Copyright(c) 2019. Rodrigo Cesar Vertulo
 You can contact me on rvertulo@gmail.com
 
 
-# **How to use PyGARV module to create Genetic Algorithms.**
+# **How to use the PyGARV module**
 To use PyGARV module, the first thing you must to do is import this into your code. The easiest way to do it, is putting the PyGARV folder inside your project folder and use the following code.
 
 
@@ -33,7 +33,14 @@ For the example in this tutorial we are going to create the subclass in the foll
 ```python
 class ExamplePyGARV(PyGARV):
     def __init__(self):
-        super().__init__(popSize = 60, values = 2, mutationRate = 0.1, fullMutation = True, symmetricCut = True, crossoverRate = 1, elitism = 0.3, digits = 6)
+        super().__init__(popSize = 60,
+                         values = 2,
+                         mutationRate = 0.1,
+                         fullMutation = True,
+                         symmetricCut = True,
+                         crossoverRate = 1,
+                         elitism = 0.3,
+                         digits = 6)
 
 ```
 
