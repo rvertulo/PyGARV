@@ -16,7 +16,7 @@ x, y >= 0
 class Example(PyGARV):
 
     def __init__(self):
-        #You can find out what each parameter do
+        #You can find out what each parameter does
         #looking at the source code of PyGARV class.
         super().__init__( popSize = 60,
                           values = 2, 
