@@ -8,4 +8,4 @@ Copyright(c) 2019. Rodrigo Cesar Vertulo
 You can contact me on rvertulo@gmail.com
 
 # How to use
-The easiest way to use this module is putting the PyGARV folder into your project folder and creat a new subclass of the PyGARV class. The file ExamplePyGARV.py shown a simple Genetic Algorithm to maximize a function subject to some restrictions. You can use this file as a start point to create your own Genetic Algorithm.
+The easiest way to use this module is putting the PyGARV folder into your project folder and create a new subclass of the PyGARV class. The file ExamplePyGARV.py shows a simple Genetic Algorithm to maximize a function subject to some restrictions. You can use this file as a start point to create your own Genetic Algorithm.
