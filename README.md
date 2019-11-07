@@ -9,7 +9,7 @@ You can contact me on rvertulo@gmail.com
 
 
 # **How to use the PyGARV module**
-To use PyGARV module, the first thing you must to do is import this into your code. The easiest way to do it, is putting the PyGARV folder inside your project folder and use the following code.
+To use PyGARV module, the first thing you must to do is import it into your code. The easiest way to do it, is putting the PyGARV folder inside your project folder and use the following code.
 
 
 ```python
