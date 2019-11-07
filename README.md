@@ -60,15 +60,15 @@ We need to implement the superclass method called "fitness". This method has as 
 
 ```python
     def fitness(self, chromosome):
-        #gets the first integer value stored on the chromosome and divides
+        #Gets the first integer value stored on the chromosome and divides
         #it by 100 to change the value to a float with two decimal places.
         x = chromosome[0]/100
 
-        #gets the second integer value stored on the chromosome and divides
+        #Gets the second integer value stored on the chromosome and divides
         #it by 100 to change the value to a float with two decimal places.
         y = chromosome[1]/100
         
-        #computes the funciont to be maximized.
+        #computes the function to be maximized.
         f = 20*x + 60*y
         
         if(
@@ -78,17 +78,17 @@ We need to implement the superclass method called "fitness". This method has as 
             x > 0 and
             y > 0
         ):
-            #the f value will be used as a rating for the chromosome. As bigger the
+            #The f value will be used as a rating for the chromosome. As bigger the
             #value assumes better will be the rating of this specific chromosome.
-            #IMPORTANT NOTE: the rating value can never be zero.
+            #IMPORTANT: the rating value can never be zero.
             rating = f
             
         else:
-            #it's not permited to have chromosomes that dont respect the restrictions
+            #It's not permited to have chromosomes that don't respect the restrictions
             #so, if any restriction is broken the chromosome is severily penalized.
-            rating = 0.001 #IMPORTANT NOTE: the rating value can never be zero.
+            rating = 0.001 #IMPORTANT: the rating value can never be zero.
 
-        #the fitness function always must returns the
+        #The fitness function always must returns the
         #chromosome being assesed and it's rating value
         return [chromosome, rating]
 ```
@@ -98,11 +98,11 @@ When the Genetic Algorithm finishes its processing, we need to show the result s
 
 ```python
     def finishedGA(self, bestChromosome):
-        #gets the first integer value stored on the best chromosome
+        #Gets the first integer value stored on the best chromosome
         #created by the Genetic Algorithm after all generations.
         x = bestChromosome[0]/100
             
-        #gets the second integer value stored on the best chromosome
+        #Gets the second integer value stored on the best chromosome
         #created by the Genetic Algorithm after all generations.
         y = bestChromosome[1]/100
         
