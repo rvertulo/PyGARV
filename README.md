@@ -55,7 +55,7 @@ subject to the following restrictions:
 * x + y >=95
 * x, y >= 0
 
-We need to implement the superclass method called "fitness". This method has as parameter the current chromossome beign processed. Inside this method we need to extrect from the chromosome the values of our problem stored on it and make any calculation concerning the problem that we want to solve. The last thing we must to do inside this method is to return a list containing the chromossome processed and its rating.
+We need to implement the superclass method called "fitness". This method has as parameter the current chromossome being processed. Inside this method we need to extrect from the chromosome the values of our problem stored on it and make any calculation concerning the problem that we want to solve. The last thing we must to do inside this method is to return a list containing the chromossome processed and its rating.
 
 
 ```python
