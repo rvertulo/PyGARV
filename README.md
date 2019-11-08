@@ -86,7 +86,7 @@ We need to implement the superclass method called "fitness". This method has as 
         else:
             #It's not permited to have chromosomes that don't respect the restrictions
             #so, if any restriction is broken the chromosome is severily penalized.
-            rating = 0.001 #IMPORTANT: the rating value can never be zero.
+            rating = 1/(f+1) #IMPORTANT: the rating value can never be zero.
 
         #The fitness function always must returns the
         #chromosome being assesed and it's rating value
