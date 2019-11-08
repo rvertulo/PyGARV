@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.0.1"
+__version__   = "1.0.2"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -58,7 +58,7 @@ class PyGARV(object):
         self.popSize = popSize
         self.values = values
         
-        self.bestChromosome = []
+        self.bestChromosome = None
         self.bestRating = 0
         self.stopGA = False
 
@@ -103,9 +103,6 @@ class PyGARV(object):
                 
             populacao.append(listaValores)
         
-        for i in populacao[0]:
-            self.bestChromosome.append(0)
-            
         self.setNewPopulation(populacao)
 
 
@@ -219,7 +216,7 @@ class PyGARV(object):
             cromossomoAvaliado = self.fitness(cromossomo)
             populacaoAvaliada.append(cromossomoAvaliado)
             
-            if(cromossomoAvaliado[1] >= self.bestRating):
+            if(cromossomoAvaliado[1] > self.bestRating):
                 self.bestRating = cromossomoAvaliado[1]
                 self.bestChromosome = cromossomoAvaliado[0]
         
