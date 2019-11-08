@@ -102,6 +102,8 @@ class PyGARV(object):
                 listaValores.append(valor)
                 
             populacao.append(listaValores)
+	
+	self.bestChromosome = populacao[0]
         self.setNewPopulation(populacao)
 
 
