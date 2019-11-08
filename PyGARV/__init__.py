@@ -93,12 +93,14 @@ class PyGARV(object):
         
         if(self.popSize % 2 != 0):
             self.popSize = self.popSize + 1
-            
+        
+        valor = 0    
         for i in range(self.popSize):
             listaValores = []
             for v in range(self.values):
-                valor = random.random()
-                valor = int((valor * (pow(10, self.digits))))
+                while valor == 0:
+                    valor = random.random()
+                    valor = int((valor * (pow(10, self.digits))))
                 listaValores.append(valor)
                 
             populacao.append(listaValores)
