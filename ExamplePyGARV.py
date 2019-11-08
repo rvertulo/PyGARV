@@ -56,7 +56,7 @@ class Example(PyGARV):
             #it's not permited to have chromosomes that dont respect the restrictions
             #so, if any restriction is broken the chromosome is severily penalized.
             
-            rating = 0.001 #IMPORTANT NOTE: the rating value can never be zero.
+            rating = 1/(f+1) #IMPORTANT NOTE: the rating value can never be zero.
 
 
         #the fitness function always must returns the
