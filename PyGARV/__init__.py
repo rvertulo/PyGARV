@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.0.0"
+__version__   = "1.0.1"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -58,7 +58,7 @@ class PyGARV(object):
         self.popSize = popSize
         self.values = values
         
-        self.bestChromosome = None
+        self.bestChromosome = []
         self.bestRating = 0
         self.stopGA = False
 
@@ -102,8 +102,10 @@ class PyGARV(object):
                 listaValores.append(valor)
                 
             populacao.append(listaValores)
-	
-	self.bestChromosome = populacao[0]
+        
+        for i in populacao[0]:
+            self.bestChromosome.append(0)
+            
         self.setNewPopulation(populacao)
 
 
@@ -172,7 +174,6 @@ class PyGARV(object):
         return elem[1]
     def makeDraw(self):
         listapopulacao = sorted(self.populacao, key = self.__sort)
-                
         avaliacoes = [n for c, n in listapopulacao]
         
         somatoria = sum(avaliacoes) 
@@ -204,7 +205,7 @@ class PyGARV(object):
             
         #Mantém o melhor cromossomo na população
         cromossomosEscolhidos[0] = self.getBestChromosome()
-    
+    			
         self.populacao = cromossomosEscolhidos
 
 
@@ -221,7 +222,7 @@ class PyGARV(object):
             if(cromossomoAvaliado[1] >= self.bestRating):
                 self.bestRating = cromossomoAvaliado[1]
                 self.bestChromosome = cromossomoAvaliado[0]
-                
+        
         self.setNewPopulation(populacaoAvaliada)
         
 
@@ -243,17 +244,18 @@ class PyGARV(object):
     def runGA(self, geracoes = 1):
         if self.stopGA == False:
             
-            for g in range(geracoes):                    
+            for g in range(geracoes):
                 self.assessPopulation()
                 self.makeDraw()
                 
                 i = 0
                 random.shuffle(self.populacao)
                 novaPopulacao = []
+
                 while(i < len(self.populacao)-1):
                     cromossomo1 = self.populacao[i]
                     cromossomo2 = self.populacao[i+1]
-                    
+
                     filhos = self.crossover(cromossomo1, cromossomo2)
                     novaPopulacao.append(filhos[0])
                     novaPopulacao.append(filhos[1])
