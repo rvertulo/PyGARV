@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.0.2"
+__version__   = "1.0.3"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -237,7 +237,7 @@ class PyGARV(object):
 
     def interruptGA(self):
         self.stopGA = True
-        self.finishGeneration(self.getBestChromosome())
+        self.finishedGeneration(self.getBestChromosome())
 
 
     def runGA(self, geracoes = 1):
