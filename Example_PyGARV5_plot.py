@@ -1,5 +1,4 @@
 from PyGARV import *
-from Produto import *
 import matplotlib.pyplot as plt
 
 class Product:
