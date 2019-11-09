@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.0.3"
+__version__   = "1.1"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -79,7 +79,15 @@ class PyGARV(object):
                 
         return maisFreq
         
-        
+    def convertToBin(self, chromosome):
+        for i in range(len(chromosome)):
+            if chromosome[i] % 2 == 0:
+                chromosome[i] = 0
+            else:
+                chromosome[i] = 1
+
+        return chromosome
+
     def getBestChromosome(self):
         return self.bestChromosome
 
