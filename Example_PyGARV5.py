@@ -1,5 +1,4 @@
 from PyGARV import *
-from Produto import *
 
 
 class Product:
