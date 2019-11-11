@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.1"
+__version__   = "1.1.1"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -110,6 +110,7 @@ class PyGARV(object):
                     valor = random.random()
                     valor = int((valor * (pow(10, self.digits))))
                 listaValores.append(valor)
+		valor = 0
                 
             populacao.append(listaValores)
         
