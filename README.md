@@ -93,7 +93,7 @@ We need to implement the superclass method called "fitness". This method has as 
         return [chromosome, rating]
 ```
 
-When the Genetic Algorithm finishes its processing, we need to show the result stored on the best chromosome. After the processing the superclass method called "finnishedGA" is executed and inside this one we can get the final result of the processing.
+When the Genetic Algorithm finishes its processing, we need to show the result stored on the best chromosome. After the processing the superclass method called "finishedGA" is executed and inside this one we can get the final result of the processing.
 
 
 ```python
