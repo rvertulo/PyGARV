@@ -1,0 +1,300 @@
+<html>
+<head></head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Maximiza&#231;&#227;o-do-lucro-de-uma-empresa-de-produ&#231;&#227;o-caseira-de-gel&#233;ias.">Maximiza&#231;&#227;o do lucro de uma empresa de produ&#231;&#227;o caseira de gel&#233;ias.<a class="anchor-link" href="#Maximiza&#231;&#227;o-do-lucro-de-uma-empresa-de-produ&#231;&#227;o-caseira-de-gel&#233;ias.">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Documento criado por <b>Rodrigo Cesar Vertulo</b> em 06 de Agosto de 2020.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Este artigo visa apresentar um algoritmo genético para a maximização do lucro de uma empresa fictícia de produção caseira de geléias denominada "Sapore di Frutta".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A Sapore di Frutta produz três tipos de geléias caseiras nos sabores "morango", "morango mais cítrico" e "uva". Os lucros obtidos com a venda de cada tipo são respectivamente, em unidades monetárias, 4.00, 4.90 e 6.00. Mensalmente a empresa produz 80 unidades do sabor "morango", 60 unidades do sabor "morango mais cítrico" e 40 unidades do sabor "uva". Para produzir tanto as geléias de "morango" quanto as de "morango mais cítrico" gasta-se uma hora e quinze minutos. O tempo necessário para a produção de uma unidade da geléia de "uva" é de duas horas.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pesquisas realizadas pelos proprietários da empresa mostram que há demanda para a venda de até 100 unidades por mês do sabor "morango", 90 unidades do sabor "morango mais cítrico" e 50 unidades do sabor "uva".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Durante o mês a empresa tem a disposição 240 horas para dedicar-se à produção e o restante para atividades comerciais e administrativas. Com base nessas informações deseja-se definir a quantidade ideal a ser produzida de cada sabor para maximizar o lucro da empresa.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Atribuindo-se a variável x para quantidade produzida do sabor "morango", y para a quantidade produzida do sabor "morango mais cítrico" e z para a quantidade produzida do sabor "uva", deseja-se maximizar o lucro mensal da empresa que é dado por:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>max L = 4x + 4.9y + 6z</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Considerando-se o tempo de produção de cada saber e o fato da empresa possuir dispobível 64 horas por mês para a atividade produtiva, a seguinte restrição deve ser respeitada:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1.15x + 1.15y + 2z &lt;= 240</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Com base no potencial de vendas de cada sabor sabe-se que as seguintes restrições também devem ser respeitadas:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>x &lt;= 100</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>y &lt;= 90</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>z &lt;= 50</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>x, y e z &gt;= 0</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>O algoritmo abaixo foi desenvolvido utilizando-se a linguagem de programação Python com a biblioteca para criação de Algoritmos Genéticos <a href="https://github.com/rvertulo/PyGARV">PyGARV</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">from</span> <span class="nn">PyGARV</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">class</span> <span class="nc">SaporeDiFrutta</span><span class="p">(</span><span class="n">PyGARV</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">popSize</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> 
+                         <span class="n">values</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+                         <span class="n">mutationRate</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">,</span>
+                         <span class="n">elitism</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                         <span class="n">digits</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+                         <span class="n">fullMutation</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                         <span class="n">symmetricCut</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+                         
+        <span class="bp">self</span><span class="o">.</span><span class="n">lucro</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chromosome</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        
+        <span class="n">l</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">4.9</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">z</span>
+        
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="p">(</span><span class="mf">1.15</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">1.15</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">240</span><span class="p">)</span> <span class="ow">or</span>
+            <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="ow">or</span>
+            <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">90</span> <span class="ow">or</span>
+            <span class="n">z</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="ow">or</span>
+            <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">):</span>
+            
+            <span class="n">nota</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mf">0.001</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nota</span> <span class="o">=</span> <span class="n">l</span>
+            
+        <span class="k">if</span> <span class="n">nota</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">nota</span> <span class="o">=</span> <span class="mf">0.001</span>
+        
+        <span class="k">return</span> <span class="p">[</span><span class="n">chromosome</span><span class="p">,</span> <span class="n">nota</span><span class="p">]</span>
+        
+    <span class="k">def</span> <span class="nf">finishedGeneration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chromosome</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        
+        <span class="n">l</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">4.9</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">z</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">lucro</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+        
+    <span class="k">def</span> <span class="nf">finishedGA</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chromosome</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">chromosome</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        
+        <span class="n">l</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">4.9</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">z</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot; y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot; z = &quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lucro = &quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1500</span><span class="p">])</span>
+
+<span class="n">pygarv1</span> <span class="o">=</span> <span class="n">SaporeDiFrutta</span><span class="p">()</span>
+<span class="n">pygarv1</span><span class="o">.</span><span class="n">runGA</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pygarv1</span><span class="o">.</span><span class="n">lucro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">pygarv2</span> <span class="o">=</span> <span class="n">SaporeDiFrutta</span><span class="p">()</span>
+<span class="n">pygarv2</span><span class="o">.</span><span class="n">runGA</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pygarv2</span><span class="o">.</span><span class="n">lucro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="n">pygarv3</span> <span class="o">=</span> <span class="n">SaporeDiFrutta</span><span class="p">()</span>
+<span class="n">pygarv3</span><span class="o">.</span><span class="n">runGA</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pygarv3</span><span class="o">.</span><span class="n">lucro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x =  94  y =  90  z =  14
+Lucro =  901.0
+x =  94  y =  90  z =  14
+Lucro =  901.0
+x =  89  y =  90  z =  17
+Lucro =  899.0
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Foram executadas três simulações, cada uma com 15.000 gerações, e os resultados mostram que o plano de produção ideal contempla 94 unidades do sabor "morango", 90 do sabor "morango mais cítrico" e 14 do sabor "uva". Seguindo-se essa estratégia a Sapore Di Frutta potencialmente lucrará 901.00 unidades monetária.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>No gráfico observa-se que as linhas azul e verde, correspondentes à primeira e segunda simulação, geraram o maior lucro potencial para a empresa.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclus&#227;o">Conclus&#227;o<a class="anchor-link" href="#Conclus&#227;o">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pelo estudo apresentado nota-se que a utilização de Algoritmos Genéticos é uma boa alternativa para o planehamento de produção, facilitando sobremaneira a tarefa de identificar as quantidades ideais de produção dos itens, respeitando-se restrições inerentes à empresa, para a maximização do lucro potencial que a mesma poderá obter.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+</body>
+
+ 
+
+
+</html>
