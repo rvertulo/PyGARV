@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.1.2"
+__version__   = "1.1.3"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -161,7 +161,7 @@ class PyGARV(object):
 
     def changeGene(self, gene):        
         bits = "{0:b}".format(gene)
-        bits = ((16-len(bits)) * "0") + "{0:b}".format(gene)
+        bits = ((64-len(bits)) * "0") + "{0:b}".format(gene)
         bits = list(bits)
         indice = random.randint(0, len(bits)-1)
         mutacao = ""
