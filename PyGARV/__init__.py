@@ -161,7 +161,7 @@ class PyGARV(object):
 
     def changeGene(self, gene):        
         bits = "{0:b}".format(gene)
-        bits = ((64-len(bits)) * "0") + "{0:b}".format(gene)
+        bits = ((16-len(bits)) * "0") + "{0:b}".format(gene)
         bits = list(bits)
         indice = random.randint(0, len(bits)-1)
         mutacao = ""
