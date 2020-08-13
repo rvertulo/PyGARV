@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.1.3"
+__version__   = "1.2"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -106,9 +106,8 @@ class PyGARV(object):
         for i in range(self.popSize):
             listaValores = []
             for v in range(self.values):
-                while valor == 0:
-                    valor = random.random()
-                    valor = int((valor * (pow(10, self.digits))))
+                valor = random.random()
+                valor = int((valor * (pow(10, self.digits))))
                 listaValores.append(valor)
                 valor = 0
 
