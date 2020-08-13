@@ -244,11 +244,8 @@ class PyGARV(object):
     def finishedGA(self, melhorCromossomo):
         return melhorCromossomo
 
-    #You can't call this method inside the method finishedGeneration
     def interruptGA(self):
         self.stopGA = True
-        self.finishedGeneration(self.getBestChromosome())
-
 
     def runGA(self, geracoes = 1):
         if self.stopGA == False:
