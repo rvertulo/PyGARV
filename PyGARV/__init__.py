@@ -20,7 +20,7 @@ import abc
 __author__    = "Rodrigo C. Vertulo"
 __copyright__ = "Copyright (c) 2019. Rodrigo Vertulo"
 __credits__   = "Rodrigo Vertulo"
-__version__   = "1.2"
+__version__   = "1.3"
 __maintener__ = "Rodrigo Vertulo"
 __email__     = "rvertulo@gmail.com"
 __status__    = "beta"
@@ -211,7 +211,8 @@ class PyGARV(object):
             
             
         #Mantém o melhor cromossomo na população
-        cromossomosEscolhidos[0] = self.getBestChromosome()
+	if self.getBestChromosome() != None:
+            cromossomosEscolhidos[0] = self.getBestChromosome()
     			
         self.populacao = cromossomosEscolhidos
 
