@@ -211,7 +211,7 @@ class PyGARV(object):
             
             
         #Mantém o melhor cromossomo na população
-	if self.getBestChromosome() != None:
+        if self.getBestChromosome() != None:
             cromossomosEscolhidos[0] = self.getBestChromosome()
     			
         self.populacao = cromossomosEscolhidos
